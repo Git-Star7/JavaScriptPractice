@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+@*<script>
+        sayHello();
+    </script>
+
+
+
+    <script>
+        //Console.Write();
+        document.write("Hello, World!");
+
+        //declaring variables
+        var alpha = "ABCDEFG";
+        var length = alpha.length;
+    </script>
+
+
+
+    <script>
+        //JavaScript Method declaration
+        function sayHello() {
+            document.write("Hello");
+        }
+    </script>
+
+
+
+    <script>
+        //JavaScript Method declaration
+        function sayHello(who) {
+            document.write("Hello, " + who);
+        }
+    </script>
+
+
+    <script>
+        //JS method use
+        var alpha = "ABCDEFG";
+        sayHello(alpha);
+    </script>
+
+    <script>
+        //JS alert method
+        alert("yo boi");
+    </script>*@
+@model List<string>
+
+<script>
+    let nameList = @Json.Serialize(Model);
+</script>
+
+<div id="maindiv">
+    <div class="input-group input1">
+        <select class="form-control selection mb-2">
+            <option class="chooseMe" selected>Choose...</option>
+            <option class="chooseNew">New Player</option>
+            @foreach (string name in Model)
+             { 
+                 <option>@name</option>
+             }
+        </select>
+    </div>
+</div>
+<div id="textInputGroup" class="input-group" style="display:none">
+    <input type="text" id="textInput" placeholder="Enter Player Name" class="form-control mb-2" />
+    <div class="input-group-append">
+        <button class="btn btn-outline-primary mb-2 addPlayer">Add</button>
+    </div>
+</div>
+
+
+
+
+
+@*<div id="div45">
+    <button class="btn btn-primary mb-2 toggle_mydiv">Toggle</button>
+    <button class="btn btn-primary mb-2 toggle_on">On</button>
+    <button class="btn btn-primary mb-2" id="toggle_off">Off</button>
+
+    <button class="btn btn-primary mb-2 poof">Poof1</button>
+    <button class="btn btn-primary mb-2 poof">Poof2</button>
+    <button class="btn btn-primary mb-2 poof">Poof3</button>
+    <button class="btn btn-primary mb-2 toggleThis">Upgrade</button>
+
+    <input type="text" id="textInput" class="form-control mb-2" style="display:none" />
+
+</div>*@
